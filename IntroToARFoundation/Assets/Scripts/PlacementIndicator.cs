@@ -23,11 +23,11 @@ public class PlacementIndicator : MonoBehaviour
     {
       placementIndicator.transform.position = hits[0].pose.position;
       placementIndicator.transform.rotation = hits[0].pose.rotation;
-      placementIndicator.SetActive(true);
-    }
-    else
-    {
-      placementIndicator.SetActive(false);
+      if (!placementIndicator.activeInHierarchy)
+      {
+
+        placementIndicator.SetActive(true);
+      }
     }
   }
 }
